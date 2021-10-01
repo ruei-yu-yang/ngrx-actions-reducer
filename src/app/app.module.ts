@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import * as appStore from './store/app.reducer';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,9 +14,9 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    StoreModule.forRoot({})
+    StoreModule.forRoot({ app: appStore.reducer })
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
